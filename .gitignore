@@ -2,3 +2,6 @@ tensorflow/*
 .idea/
 __pycache__/
 tensorflow/
+model/*
+Would skip repository sarcasmDetection/
+checkpoint

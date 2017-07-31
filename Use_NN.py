@@ -8,13 +8,13 @@ calling use_neural_network() method.
 @Author Saurabh Parekh (sbp4709@rit.edu)
 """
 
-import create_feature_sets
+import createFeatureSets
 import tensorflow as tf
 import os
 
 
 # Build the structure of the neural network exactly same as the
-# train_and_test.py, so that the input features can be run through the neural
+# trainAndTest.py, so that the input features can be run through the neural
 #  network.
 number_nodes_HL1 = 100
 number_nodes_HL2 = 100
@@ -86,10 +86,10 @@ def use_neural_network(input_data):
     prediction = neural_network_model(x)
 
     with tf.Session() as sess:
-    sess.run(tf.global_variables_initializer())
+        sess.run(tf.global_variables_initializer())
         saver.restore(sess, os.path.join(os.getcwd(),
                                          'model\sarcasm_model.ckpt'))
-        features = create_feature_sets.extractFeatureOfASentence(input_data)
+        features = createFeatureSets.extractFeatureOfASentence(input_data)
 
         result = (sess.run(tf.argmax(prediction.eval(feed_dict={x: [
             features]}), 1)))
@@ -101,4 +101,4 @@ def use_neural_network(input_data):
 
 # Supply the sentence to be tested below as a parameter in the method call.
 if __name__ == '__main__':
-    use_neural_network("Going to the gym surely makes you fit, in a same way standing in a garage make you a car!")
+    use_neural_network("Going to the gym surely makes you fit")
