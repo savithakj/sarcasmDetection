@@ -21,7 +21,7 @@ import sklearn.metrics as sk
 class TrainAndTest:
     def __init__(self):
         # Load the featuresets array
-        featuresets = np.load('featuresets.npy')
+        featuresets = np.load('feature sets.npy')
 
         # Divide the feature sets into training and testing set.
         self.train_input, self.train_output, self.test_input, self.test_output = self.divideFeatureSets(featuresets)
@@ -34,7 +34,7 @@ class TrainAndTest:
         # Define other constants
         n_classes = 2
         self.batch_size = 50
-        self.number_epochs = 75
+        self.number_epochs = 20
 
         # Tensorflow place holder for input ad output to the tensorflow graph
         self.x = tf.placeholder('float', [None, len(self.train_input[0])])
@@ -184,13 +184,13 @@ class TrainAndTest:
             # Specify the correctness criteria. Prediction = actual
             correct = tf.equal(tf.argmax(prediction, 1), tf.argmax(self.y, 1))
 
-            # Caluculate accuracyusing correctness criteria
+            # Calculate accuracies correctness criteria
             accuracy = tf.reduce_mean(tf.cast(correct, 'float'))
 
             # Specify the criteria to get predicted classes, with a default of 1.
             y_p = tf.argmax(prediction, 1)
 
-            # Run the model on test data tooptain predictions
+            # Run the model on test data to obtain predictions
             val_accuracy, y_pred = sess.run([accuracy, y_p],
                                             feed_dict={self.x: self.test_input,
                                                        self.y: self.test_output})
@@ -207,7 +207,7 @@ class TrainAndTest:
 
             # Save the model for using in future.
             saver = tf.train.Saver()
-            saver.save(sess, os.path.join(os.getcwd(), 'model\sarcasm_model.ckpt'))
+            saver.save(sess, os.path.join(os.getcwd(), 'model/sarcasm_model'))
 
 
 if __name__ == '__main__':

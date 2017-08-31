@@ -1,2 +1,2 @@
-model_checkpoint_path: "/Users/savithajayasankar/PycharmProjects/Sarcasm_Detection_using_Tensorflow/model\\sarcasm_model.ckpt"
-all_model_checkpoint_paths: "/Users/savithajayasankar/PycharmProjects/Sarcasm_Detection_using_Tensorflow/model\\sarcasm_model.ckpt"
+model_checkpoint_path: "/Users/savithajayasankar/PycharmProjects/Sarcasm_Detection_using_Tensorflow/model\\sarcasm_model"
+all_model_checkpoint_paths: "/Users/savithajayasankar/PycharmProjects/Sarcasm_Detection_using_Tensorflow/model\\sarcasm_model"

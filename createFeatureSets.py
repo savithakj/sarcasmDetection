@@ -57,6 +57,7 @@ class CreateFeatureSet:
         np.save('feature sets', featuresets1)
 
     def extract_feature_of_sentence(self, sen):
+        # type: (object) -> object
         """
         This method extracts features of a single sentence.
         We have following list of features being extracted.
