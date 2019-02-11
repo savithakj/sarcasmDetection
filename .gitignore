@@ -1,7 +1,17 @@
 tensorflow/*
 .idea/
 __pycache__/
-tensorflow/
+tensorflow/*
 model/*
+
+
 Would skip repository sarcasmDetection/
 checkpoint
+
+
+
+README.pdf
+feature sets.npy
+feature_sets.npy
+negproc.npy
+posproc.npy
